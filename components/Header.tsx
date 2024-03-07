@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "next/link"
 import Image from 'next/image'
 import { SignInButton, SignedOut, UserButton } from '@clerk/nextjs'
+import { ThemeToggler } from './ThemeToggler'
 
 const Header = () => {
     return (
@@ -21,6 +22,7 @@ const Header = () => {
 
             <div className='px-5 flex space-x-2 items-center'>
                 {/* Theme Toggler */}
+                <ThemeToggler />
 
                 <UserButton afterSignOutUrl='/' />
 

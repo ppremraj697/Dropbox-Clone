@@ -1,10 +1,36 @@
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Arrow } from "@radix-ui/react-dropdown-menu";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="">
-      <h1>Dropbox Clone</h1>
+      <div>
+        <div className="p-10 flex flex-col bg-[#2B2929] dark:bg-slate-800 text-white">
+          <h1 className="text-5xl font-bold">
+            Welcome to Dropbox. <br />
+            <br />
+            Storing everything for you and your business needs. All in one place
+          </h1>
+
+          <p className="pb-20">
+            Enhance your personal storage with Dropbox, offering a simple and efficient way to upload, organize, and access files from anywhere. Securely store important documents and media, and experience the convenience of easy file management and sharing in one centralized solution.
+          </p>
+
+          <Link href="/dashboard" className="flex cursor-pointer bg-blue-500 p-5 w-fit">
+            Try it for free!
+            <ArrowRight className="ml-10"/>
+          </Link>
+        </div>
+      </div>
+
+      <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
+      <p className="text-center font-light p-2">
+        This Dropbox Clone Project is made only for informational and Educational purposes only. We do not own or affiliate with Dropbox and/or any of it's subsidiaries in any form. Copyright Disclaimer under Section 51 of the Copyright Act, 1956, allowance is made for "fair dealing" for the purposes of private study, research, criticism, review, and news reporting.
+      </p>
     </main>
   );
 }
