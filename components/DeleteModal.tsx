@@ -3,17 +3,20 @@
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
+import { db, storage } from "@/firebase"
 import { useAppStore } from "@/store/store"
+import { useUser } from "@clerk/nextjs"
+import { deleteDoc, doc } from "firebase/firestore"
+import { deleteObject, ref } from "firebase/storage"
 
 export function DeleteModal() {
+
+    const { user } = useUser();
 
     const [isDeleteModalOpen, setIsDeleteModalOpen, fileId, setFileId] =
         useAppStore((state) => [
@@ -23,7 +26,24 @@ export function DeleteModal() {
             state.setFileId,
         ]);
 
-    async function deleteFile() { }
+    async function deleteFile() {
+        if (!user || !fileId) return;
+
+        const fileRef = ref(storage, `users/${user.id}/files/${fileId}`);
+
+        try {
+            deleteObject(fileRef).then(async () => {
+                deleteDoc(doc(db, "users", user.id, "files", fileId)).then(() => {
+                    console.log("Deleted!");
+                });
+            }).finally(() => {
+                setIsDeleteModalOpen(false);
+            });
+        } catch (error) {
+            console.log(error);
+            setIsDeleteModalOpen(false);
+        }
+    }
 
     return (
         <Dialog
