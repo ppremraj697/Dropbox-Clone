@@ -53,6 +53,10 @@ const Dropzone = () => {
             await updateDoc(doc(db, "users", user.id, "files", docRef.id), {
                 downloadURL: downloadURL,
             });
+
+            toast.success("Uploaded Successfully", {
+                id: toastId,
+            })
         });
 
         setLoading(false);
