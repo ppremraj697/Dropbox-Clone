@@ -40,7 +40,7 @@ export default function Home() {
 
       <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
       <p className="text-center font-light p-2">
-        This Dropbox Clone Project is made only for informational and Educational purposes only. We do not own or affiliate with Dropbox and/or any of it's subsidiaries in any form. Copyright Disclaimer under Section 51 of the Copyright Act, 1956, allowance is made for &quot;fair dealing&quot; for the purposes of private study, research, criticism, review, and news reporting.
+        This Dropbox Clone Project is made only for informational and Educational purposes only. We do not own or affiliate with Dropbox and/or any of it&apos;s subsidiaries in any form. Copyright Disclaimer under Section 51 of the Copyright Act, 1956, allowance is made for &quot;fair dealing&quot; for the purposes of private study, research, criticism, review, and news reporting.
       </p>
     </main>
   );
