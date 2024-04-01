@@ -1,11 +1,21 @@
+"use client"
 import Image from "next/image";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Arrow } from "@radix-ui/react-dropdown-menu";
 import { ArrowRight } from "lucide-react";
+import ReactPlayer from "react-player"
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <main className="">
       <div className="flex flex-col lg:flex-row bg-[#1E1919]">
@@ -27,16 +37,20 @@ export default function Home() {
         </div>
 
         <div className="bg-[#1E1919] dark:bg-slate-800 p-10 flex justify-center items-center">
-          <div>
-            <video autoPlay loop muted className="rounded-lg">
-              <source src="https:aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/overview/lp-header-graphite200-1920x1080.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className="rounded-lg overflow-hidden aspect-widescreen">
+            {isClient && (
+              <ReactPlayer
+                url='https:aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/overview/lp-header-graphite200-1920x1080.mp4'
+                playing={true}
+                loop={true}
+                muted={true}
+                width="100%"
+                height="100%" />
+            )}
           </div>
         </div>
 
       </div>
-
 
       <p className="text-center font-bold text-xl pt-5">Disclaimer</p>
       <p className="text-center font-light p-2">
