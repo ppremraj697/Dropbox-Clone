@@ -40,7 +40,7 @@ export default function Home() {
           <div className="rounded-lg overflow-hidden aspect-widescreen">
             {isClient && (
               <ReactPlayer
-                url='https:aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/overview/lp-header-graphite200-1920x1080.mp4'
+                url='/dropboxVideo.mp4'
                 playing={true}
                 loop={true}
                 muted={true}
