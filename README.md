@@ -24,13 +24,13 @@ npm run dev
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Key Skills
-Core Functionality and App Logic: React/NextJS(Version 14) && Firebase and Cloud Firestore(BaaS)
-Styling: Tailwind CSS && Shadcn/UI
-State Management: Zustand 
-User Authentication: Clerk
-Deployment: Vercel
+Core Functionality and App Logic: React/NextJS(Version 14) && Firebase and Cloud Firestore(BaaS)   
+Styling: Tailwind CSS && Shadcn/UI   
+State Management: Zustand   
+User Authentication: Clerk   
+Deployment: Vercel   
 
 Note: The minimum Node.js version required is 18.17 to run this Next.js app, since it's built on top of version 14.1.0
 
 ## Deployment Link
-[Link](https://dropbox-clone-eta-black.vercel.app/)
+[https://dropbox-clone-eta-black.vercel.app/](https://dropbox-clone-eta-black.vercel.app/)
